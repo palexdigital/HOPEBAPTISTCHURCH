@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Church | Church For People Like You | Pretoria</title>
+    <meta name="description" content="Meta Church in Sunnyside, Pretoria, South Africa. A modern church for real people experiencing the transformative power of Jesus. Join us Sundays at 84 Bourke Street.">
+    <meta property="og:title" content="Meta Church | Church For People Like You">
+    <meta property="og:description" content="Meta Church - 84 Bourke Street, Sunnyside, Pretoria. Experience real community, powerful worship, and relevant biblical teaching.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <style>
+        /* Modern CSS Reset & Design Tokens */
+        :root {
+            --primary-yellow: #FFD200;
+            --primary-yellow-hover: #E6BD00;
+            --dark-black: #111111;
+            --off-black: #1A1A1A;
+            --card-dark: #222222;
+            --text-white: #FFFFFF;
+            --text-light-gray: #CCCCCC;
+            --text-dark: #222222;
+            --bg-light-gray: #F4F4F4;
+            --border-color: #E0E0E0;
+            --border-dark: #333333;
+            --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-speed: 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--text-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-speed);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 28px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            text-align: center;
+        }
+
+        .btn-yellow {
+            background-color: var(--primary-yellow);
+            color: var(--dark-black);
+            border-color: var(--primary-yellow);
+        }
+
+        .btn-yellow:hover {
+            background-color: var(--primary-yellow-hover);
+            border-color: var(--primary-yellow-hover);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: var(--text-white);
+            border-color: var(--text-white);
+        }
+
+        .btn-outline-white:hover {
+            background-color: var(--text-white);
+            color: var(--dark-black);
+        }
+
+        .btn-black {
+            background-color: var(--dark-black);
+            color: var(--text-white);
+            border-color: var(--dark-black);
+        }
+
+        .btn-black:hover {
+            background-color: #333333;
+            border-color: #333333;
+        }
+
+        .btn-outline-black {
+            background-color: transparent;
+            color: var(--dark-black);
+            border-color: var(--dark-black);
+        }
+
+        .btn-outline-black:hover {
+            background-color: var(--dark-black);
+            color: var(--text-white);
+        }
+
+        /* Header / Navigation */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-dark);
+            transition: background-color var(--transition-speed);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-white);
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .brand-logo .logo-icon {
+            display: inline-flex;
+            gap: 2px;
+        }
+
+        .brand-logo .logo-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-yellow);
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            color: var(--text-white);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-yellow);
+        }
+
+        /* Dropdown Menu */
+        .nav-item-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--off-black);
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 3px solid var(--primary-yellow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all var(--transition-speed);
+            list-style: none;
+            padding: 10px 0;
+        }
+
+        .nav-item-dropdown:hover .dropdown-menu,
+        .nav-item-dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-white);
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(255, 210, 0, 0.1);
+            color: var(--primary-yellow);
+        }
+
+        /* Mobile Nav Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-white);
+            margin: 5px 0;
+            transition: all var(--transition-speed);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--dark-black);
+            color: var(--text-white);
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            filter: grayscale(100%) contrast(120%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(17,17,17,0.4) 0%, rgba(17,17,17,0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 60px 0;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero-title .highlight {
+            background-color: var(--primary-yellow);
+            color: var(--dark-black);
+            padding: 0 10px;
+            display: inline-block;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Section 1: Who Is Meta Church For */
+        .section-who {
+            padding: 100px 0;
+            background-color: var(--text-white);
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 25px;
+            color: var(--dark-black);
+        }
+
+        .who-text {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .who-tagline {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            color: var(--dark-black);
+            text-transform: uppercase;
+        }
+
+        .image-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Testimonial Quote Section */
+        .quote-section {
+            background-color: var(--bg-light-gray);
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .quote-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .quote-text {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--dark-black);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .quote-author {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Join Us Yellow Section */
+        .join-section {
+            background-color: var(--primary-yellow);
+            color: var(--dark-black);
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .join-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .join-subtitle {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .join-description {
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .join-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .address-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        /* Banner CTA */
+        .banner-cta {
+            position: relative;
+            padding: 120px 0;
+            background-color: var(--dark-black);
+            color: var(--text-white);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+            filter: grayscale(100%);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+        }
+
+        .banner-title .highlight {
+            color: var(--primary-yellow);
+        }
+
+        /* What is Meta Section */
+        .section-what {
+            padding: 90px 0;
+            text-align: center;
+            background-color: var(--text-white);
+        }
+
+        .what-description {
+            max-width: 700px;
+            margin: 20px auto 35px auto;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Sermons Section */
+        .sermons-section {
+            padding: 90px 0;
+            background-color: var(--bg-light-gray);
+            text-align: center;
+        }
+
+        .sermon-player-container {
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            background-color: var(--dark-black);
+        }
+
+        .video-placeholder {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-placeholder img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 210, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform var(--transition-speed), background-color var(--transition-speed);
+        }
+
+        .play-button-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--primary-yellow);
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 25px solid var(--dark-black);
+            margin-left: 5px;
+        }
+
+        /* Looking For More Tabbed Section */
+        .more-section {
+            padding: 100px 0;
+            background-color: var(--text-white);
+        }
+
+        .more-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+        }
+
+        .tab-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tab-button {
+            text-align: left;
+            padding: 15px 20px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            background-color: var(--bg-light-gray);
+            border: none;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .tab-button:hover, .tab-button.active {
+            background-color: var(--primary-yellow);
+            border-left-color: var(--dark-black);
+            color: var(--dark-black);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .graphic-banner {
+            background-color: var(--dark-black);
+            color: var(--text-white);
+            padding: 40px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .graphic-title {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .newspaper-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 90px 0;
+            background-color: var(--bg-light-gray);
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .map-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .map-info p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Connect Banner Section */
+        .connect-banner {
+            background-color: var(--primary-yellow);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .connect-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Give Section */
+        .give-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--text-white);
+        }
+
+        .give-description {
+            max-width: 650px;
+            margin: 15px auto 30px auto;
+            color: #555;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--dark-black);
+            color: var(--text-white);
+            padding-top: 60px;
+            padding-bottom: 30px;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .footer-widgets {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-dark);
+            text-align: center;
+        }
+
+        .footer-widget {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .widget-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #222;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-yellow);
+            margin-bottom: 5px;
+        }
+
+        .widget-title {
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .widget-text {
+            font-size: 0.85rem;
+            color: var(--text-light-gray);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #222;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-yellow);
+            color: var(--dark-black);
+        }
+
+        .copyright-text {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .developer-credit {
+            font-size: 0.85rem;
+            color: var(--text-light-gray);
+            margin-top: 5px;
+        }
+
+        .developer-credit a {
+            color: var(--primary-yellow);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .developer-credit a:hover {
+            color: var(--text-white);
+        }
+
+        /* Page Template Internal Styling */
+        .page-header {
+            background-color: var(--dark-black);
+            color: var(--text-white);
+            padding: 140px 0 60px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--dark-black);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Dynamic Page Container SPA structure */
+        .page-view {
+            display: none;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .who-grid, .map-grid, .more-grid, .tab-content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-widgets {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--off-black);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+                gap: 20px;
+                transform: translateY(-150%);
+                transition: transform var(--transition-speed);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+
+            .desktop-nav.active {
+                transform: translateY(0);
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background-color: transparent;
+                box-shadow: none;
+                border: none;
+                padding-left: 20px;
+                display: none;
+            }
+
+            .nav-item-dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .footer-widgets {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#home" class="brand-logo page-nav-link" data-target="home-page">
+                <div class="logo-icon">
+                    <div class="logo-circle"></div>
+                    <div class="logo-circle"></div>
+                </div>
+                META CHURCH
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="desktop-nav" id="desktopNav">
+                <a href="#home" class="nav-link page-nav-link active" data-target="home-page">Home</a>
+                
+                <div class="nav-item-dropdown">
+                    <a href="#about" class="nav-link page-nav-link" data-target="about-page">About ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about" class="page-nav-link" data-target="about-page">Who We Are</a></li>
+                        <li><a href="#beliefs" class="page-nav-link" data-target="beliefs-page">Our Beliefs</a></li>
+                        <li><a href="#leadership" class="page-nav-link" data-target="leadership-page">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <a href="#visit" class="nav-link page-nav-link" data-target="visit-page">Plan A Visit</a>
+                <a href="#messages" class="nav-link page-nav-link" data-target="messages-page">Messages</a>
+                <a href="#connect" class="nav-link page-nav-link" data-target="connect-page">Connect</a>
+                <a href="#give" class="nav-link page-nav-link" data-target="give-page">Give</a>
+                <a href="#contact" class="btn btn-yellow page-nav-link" data-target="contact-page">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="app-content">
+
+        <!-- ================= HOME PAGE ================= -->
+        <div id="home-page" class="page-view active">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <img src="./image01.jpg" alt="Meta Church Community Worship" class="hero-bg">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">CHURCH FOR PEOPLE <span class="highlight">LIKE YOU</span></h1>
+                        <div class="hero-buttons">
+                            <a href="#visit" class="btn btn-yellow page-nav-link" data-target="visit-page">JOIN US</a>
+                            <a href="#messages" class="btn btn-outline-white page-nav-link" data-target="messages-page">WATCH ONLINE</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who Is Meta Church For Section -->
+            <section class="section-who">
+                <div class="container">
+                    <div class="who-grid">
+                        <div class="who-content">
+                            <h2 class="section-title">Who Is Meta Church For?</h2>
+                            <p class="who-text">
+                                Meta Church is designed for people who are searching for genuine community, practical biblical truth, and a fresh experience of faith. Whether you've grown up in church, haven't set foot in a sanctuary for years, or are asking big spiritual questions for the first time—you belong here.
+                            </p>
+                            <p class="who-text">
+                                We believe church shouldn't be dynamic-less, confusing, or disconnected from everyday life. Here in Sunnyside, Pretoria, we are building a vibrant home where everyone is welcomed, loved, and challenged to grow.
+                            </p>
+                            <div class="who-tagline">
+                                Meta Church is a Church For people like YOU!
+                            </div>
+                        </div>
+                        <div class="image-gallery-grid">
+                            <img src="./image02.jpg" alt="Church members interacting" class="gallery-img">
+                            <img src="./image03.jpg" alt="Worship atmosphere" class="gallery-img">
+                            <img src="./image04.jpg" alt="Community connection" class="gallery-img">
+                            <img src="./image05.jpg" alt="Sunnyside Pretoria gathering" class="gallery-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Section -->
+            <section class="quote-section">
+                <div class="quote-container">
+                    <p class="quote-text">
+                        "I became very disenchanted with church and church people. However, Meta Church has not only showered me with an accurate portrayal of love as described by Jesus, but they're also teaching and challenging me to genuinely love and serve the people I come in contact with daily."
+                    </p>
+                    <p class="quote-author">— Meta Church Member</p>
+                </div>
+            </section>
+
+            <!-- Join Us Yellow Section -->
+            <section class="join-section">
+                <div class="container">
+                    <h2 class="join-title">Join Us For Church!</h2>
+                    <div class="join-subtitle">SUNDAYS @ 10:00 AM</div>
+                    <p class="join-description">
+                        We meet every Sunday morning for passionate worship, life-changing Bible teaching, and intentional community. Kids programs and nursery care are provided in a safe, fun environment.
+                    </p>
+                    <div class="join-buttons">
+                        <a href="#visit" class="btn btn-black page-nav-link" data-target="visit-page">JOIN US IN PERSON</a>
+                        <a href="#messages" class="btn btn-outline-black page-nav-link" data-target="messages-page">JOIN US ONLINE</a>
+                    </div>
+                    <div>
+                        <div class="address-box">
+                            📍 84 Bourke Street, Sunnyside, Pretoria, South Africa
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Banner Statement -->
+            <section class="banner-cta">
+                <img src="./image06.jpg" alt="Transformed life" class="banner-bg">
+                <div class="container">
+                    <div class="banner-content">
+                        <h2 class="banner-title">
+                            Meta Church is here to help you experience the <span class="highlight">transformative power of Jesus</span> in your life.
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What Is Meta Section -->
+            <section class="section-what">
+                <div class="container">
+                    <h2 class="section-title">What Is Meta?</h2>
+                    <p class="what-description">
+                        "Meta" comes from the Greek word meaning transformation or change. We exist to see lives completely transformed through authentic relationship with God and each other.
+                    </p>
+                    <a href="#about" class="btn btn-outline-black page-nav-link" data-target="about-page">GET STARTED</a>
+                </div>
+            </section>
+
+            <!-- Watch Latest Message Section -->
+            <section class="sermons-section">
+                <div class="container">
+                    <h2 class="section-title">Watch Our Latest Message</h2>
+                    <p style="max-width: 600px; margin: 0 auto; color: #666;">
+                        Catch up on current series, study God's Word with us, and get inspired wherever you are.
+                    </p>
+                    
+                    <div class="sermon-player-container">
+                        <div class="video-placeholder">
+                            <img src="./image07.jpg" alt="Latest Sermon Video Banner">
+                            <a href="#messages" class="play-button-overlay page-nav-link" data-target="messages-page" aria-label="Play Sermon">
+                                <div class="play-icon"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Tabbed Section: Looking For More? -->
+            <section class="more-section">
+                <div class="container">
+                    <h2 class="section-title" style="margin-bottom: 40px;">Looking For More?</h2>
+                    
+                    <div class="more-grid">
+                        <div class="tab-list">
+                            <button class="tab-button active" onclick="openTab(event, 'tab-goodnews')">Good News For All</button>
+                            <button class="tab-button" onclick="openTab(event, 'tab-getconnected')">Get Connected</button>
+                            <button class="tab-button" onclick="openTab(event, 'tab-findgroup')">Find A Group</button>
+                            <button class="tab-button" onclick="openTab(event, 'tab-serve')">Serve With Us</button>
+                        </div>
+
+                        <div class="tab-content-container">
+                            <!-- Tab 1 -->
+                            <div id="tab-goodnews" class="tab-content active">
+                                <div class="tab-content-grid">
+                                    <div>
+                                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">BAD NEWS IS INESCAPABLE. BUT GOOD NEWS IS AVAILABLE.</h3>
+                                        <p style="color: #555; margin-bottom: 20px; line-height: 1.7;">
+                                            We live in a world filled with anxiety, hardship, and brokenness. But the Gospel is the incredible declaration that God loves you deeply, sent His Son Jesus to reconcile us to Himself, and offers ultimate hope, forgiveness, and new life today.
+                                        </p>
+                                        <a href="#about" class="btn btn-black page-nav-link" data-target="about-page">READ MORE</a>
+                                    </div>
+                                    <div class="graphic-banner">
+                                        <img src="./image08.jpg" alt="Good News Newspaper Concept" class="newspaper-img">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2 -->
+                            <div id="tab-getconnected" class="tab-content">
+                                <div class="tab-content-grid">
+                                    <div>
+                                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">START YOUR JOURNEY WITH US</h3>
+                                        <p style="color: #555; margin-bottom: 20px; line-height: 1.7;">
+                                            Taking your first steps at Meta Church is easy. Attend a service, meet our leadership team, or join us for Next Steps after the Sunday morning gathering.
+                                        </p>
+                                        <a href="#connect" class="btn btn-black page-nav-link" data-target="connect-page">CONNECT NOW</a>
+                                    </div>
+                                    <div>
+                                        <img src="./image01.jpg" alt="Get Connected" style="border-radius: 6px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 3 -->
+                            <div id="tab-findgroup" class="tab-content">
+                                <div class="tab-content-grid">
+                                    <div>
+                                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">COMMUNITY HAPPENS IN GROUPS</h3>
+                                        <p style="color: #555; margin-bottom: 20px; line-height: 1.7;">
+                                            Life is better together. Our small groups meet throughout Sunnyside and Pretoria during the week to study scripture, pray, and support each other.
+                                        </p>
+                                        <a href="#connect" class="btn btn-black page-nav-link" data-target="connect-page">FIND A GROUP</a>
+                                    </div>
+                                    <div>
+                                        <img src="./image02.jpg" alt="Small Groups" style="border-radius: 6px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 4 -->
+                            <div id="tab-serve" class="tab-content">
+                                <div class="tab-content-grid">
+                                    <div>
+                                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">MAKE A DIFFERENCE TODAY</h3>
+                                        <p style="color: #555; margin-bottom: 20px; line-height: 1.7;">
+                                            Use your gifts and talents to serve God and love people. From tech and music to greeting and kids ministry, there is a place for you to make an impact.
+                                        </p>
+                                        <a href="#connect" class="btn btn-black page-nav-link" data-target="connect-page">SERVE TEAMS</a>
+                                    </div>
+                                    <div>
+                                        <img src="./image03.jpg" alt="Volunteers Serving" style="border-radius: 6px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pretoria Google Map Section -->
+            <section class="map-section">
+                <div class="container">
+                    <div class="map-grid">
+                        <div class="map-info">
+                            <h3>VISIT US IN PRETORIA</h3>
+                            <p><strong>Location:</strong><br>84 Bourke Street, Sunnyside, Pretoria, South Africa</p>
+                            <p><strong>Service Times:</strong><br>Sundays at 10:00 AM</p>
+                            <p>Our venue in Sunnyside is central, welcoming, and easily accessible. We offer secure parking and dedicated volunteer teams to welcome you at the door.</p>
+                            <a href="https://maps.google.com/?q=84+Bourke+Street,+Sunnyside,+Pretoria,+South+Africa" target="_blank" rel="noopener noreferrer" class="btn btn-black" style="margin-top: 15px;">GET DIRECTIONS</a>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.6338309192843!2d28.2045!3d-25.7578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619999999999%3A0x0!2zODQgQm91cmtlIFN0LCBTdW5ueXNpZGUsIFByZXRvcmlhLCAwMDAy!5e0!3m2!1sen!2sza!4v1600000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connect Banner -->
+            <section class="connect-banner">
+                <div class="container">
+                    <h2>Connect With Us</h2>
+                    <p style="margin-bottom: 20px;">We would love to meet you and help you take your next step.</p>
+                    <a href="#contact" class="btn btn-black page-nav-link" data-target="contact-page">TAKE A STEP</a>
+                </div>
+            </section>
+
+            <!-- Give Section -->
+            <section class="give-section">
+                <div class="container">
+                    <h2 class="section-title">Give Online</h2>
+                    <p class="give-description">
+                        Generosity changes lives. Your giving enables us to serve our local community in Sunnyside, share God's message, and make a lasting kingdom impact.
+                    </p>
+                    <a href="#give" class="btn btn-outline-black page-nav-link" data-target="give-page">GIVE NOW</a>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <div id="about-page" class="page-view">
+            <div class="page-header">
+                <img src="./image02.jpg" alt="About Meta Church" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">ABOUT META CHURCH</h1>
+                    <p class="page-subtitle">Who we are, what drives us, and our vision for Sunnyside, Pretoria.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container">
+                    <div class="who-grid">
+                        <div>
+                            <h2 class="section-title">Our Heart & Mission</h2>
+                            <p class="who-text">
+                                Meta Church was planted with a clear conviction: church should be authentic, life-giving, and centered entirely on the gospel of Jesus Christ. We are non-denominational, diverse, and passionate about creating a home for everyone.
+                            </p>
+                            <p class="who-text">
+                                We believe transformation happens through relationship with Jesus, growth in God's Word, and deep fellowship with believers. Located in Sunnyside, Pretoria, we are committed to blessing our city and reaching people from all walks of life.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="./image03.jpg" alt="Community Worship" style="border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= BELIEFS PAGE ================= -->
+        <div id="beliefs-page" class="page-view">
+            <div class="page-header">
+                <img src="./image04.jpg" alt="Our Beliefs" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">OUR BELIEFS</h1>
+                    <p class="page-subtitle">The biblical truths that anchor our faith and ministry.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container" style="max-width: 800px;">
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">THE BIBLE</h3>
+                        <p style="color: #555;">We believe the Bible is the inspired, authoritative, and error-free Word of God, serving as our supreme guide for faith, doctrine, and living.</p>
+                    </div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">GOD & THE TRINITY</h3>
+                        <p style="color: #555;">We believe in one God, eternally existing in three persons: Father, Son, and Holy Spirit—equal in power and glory.</p>
+                    </div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">JESUS CHRIST</h3>
+                        <p style="color: #555;">We believe in Jesus Christ, His virgin birth, sinless life, substitutionary death on the cross, bodily resurrection, and imminent return.</p>
+                    </div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">SALVATION</h3>
+                        <p style="color: #555;">Salvation is a free gift of God offered to all through grace alone, received through faith in Jesus Christ, apart from human works.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= LEADERSHIP PAGE ================= -->
+        <div id="leadership-page" class="page-view">
+            <div class="page-header">
+                <img src="./image05.jpg" alt="Leadership Team" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">LEADERSHIP</h1>
+                    <p class="page-subtitle">Meet the team serving Meta Church in Pretoria.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                        <div style="background: var(--bg-light-gray); border-radius: 8px; overflow: hidden; text-align: center; padding-bottom: 20px;">
+                            <img src="./image06.jpg" alt="Lead Pastor" style="width: 100%; height: 280px; object-fit: cover;">
+                            <h3 style="margin-top: 15px;">Lead Pastoral Team</h3>
+                            <p style="color: #666; font-size: 0.9rem;">Pretoria Campus</p>
+                        </div>
+                        <div style="background: var(--bg-light-gray); border-radius: 8px; overflow: hidden; text-align: center; padding-bottom: 20px;">
+                            <img src="./image07.jpg" alt="Worship Team" style="width: 100%; height: 280px; object-fit: cover;">
+                            <h3 style="margin-top: 15px;">Worship & Creative</h3>
+                            <p style="color: #666; font-size: 0.9rem;">Meta Church</p>
+                        </div>
+                        <div style="background: var(--bg-light-gray); border-radius: 8px; overflow: hidden; text-align: center; padding-bottom: 20px;">
+                            <img src="./image08.jpg" alt="Kids Ministry" style="width: 100%; height: 280px; object-fit: cover;">
+                            <h3 style="margin-top: 15px;">Kids & Family</h3>
+                            <p style="color: #666; font-size: 0.9rem;">Sunnyside Team</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PLAN A VISIT PAGE ================= -->
+        <div id="visit-page" class="page-view">
+            <div class="page-header">
+                <img src="./image01.jpg" alt="Plan Your Visit" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">PLAN A VISIT</h1>
+                    <p class="page-subtitle">We can't wait to welcome you this Sunday at 84 Bourke Street!</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container">
+                    <div class="who-grid">
+                        <div>
+                            <h2 class="section-title">WHAT TO EXPECT</h2>
+                            <p class="who-text"><strong>Arrival & Parking:</strong> Free, secure parking is available on site. Friendly greeters will welcome you at the door.</p>
+                            <p class="who-text"><strong>Worship & Message:</strong> Our service lasts around 75 minutes, featuring modern worship music and an inspiring, practical Bible message.</p>
+                            <p class="who-text"><strong>Meta Kids:</strong> Safe, exciting classes tailored for infants through primary school students during the morning service.</p>
+                            <p class="who-text"><strong>Attire:</strong> Come as you are! From casual to formal, everyone is welcome.</p>
+                        </div>
+                        <div style="background: var(--dark-black); color: white; padding: 40px; border-radius: 8px;">
+                            <h3>JOIN US THIS SUNDAY</h3>
+                            <p style="margin-top: 15px; color: #CCC;">Service Time: 10:00 AM</p>
+                            <p style="color: #CCC;">Location: 84 Bourke Street, Sunnyside, Pretoria, South Africa</p>
+                            <a href="#contact" class="btn btn-yellow page-nav-link" data-target="contact-page" style="margin-top: 25px;">LET US KNOW YOU'RE COMING</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= MESSAGES PAGE ================= -->
+        <div id="messages-page" class="page-view">
+            <div class="page-header">
+                <img src="./image07.jpg" alt="Messages" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">SERMONS & MESSAGES</h1>
+                    <p class="page-subtitle">Listen to encouraging teaching from God's Word anytime.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                        <div style="background: #FFF; border: 1px solid #EEE; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                            <img src="./image07.jpg" alt="Message 1" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="padding: 20px;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Following Jesus In Your 20s</h3>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Meta Sunday Series</p>
+                                <a href="javascript:void(0)" onclick="alert('Playing latest message stream...')" class="btn btn-black" style="width: 100%;">WATCH MESSAGE</a>
+                            </div>
+                        </div>
+
+                        <div style="background: #FFF; border: 1px solid #EEE; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                            <img src="./image06.jpg" alt="Message 2" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="padding: 20px;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 10px;">The Power of Authentic Community</h3>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Transformative Faith</p>
+                                <a href="javascript:void(0)" onclick="alert('Playing message stream...')" class="btn btn-black" style="width: 100%;">WATCH MESSAGE</a>
+                            </div>
+                        </div>
+
+                        <div style="background: #FFF; border: 1px solid #EEE; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                            <img src="./image08.jpg" alt="Message 3" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="padding: 20px;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Good News In Dark Times</h3>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Gospel Foundation</p>
+                                <a href="javascript:void(0)" onclick="alert('Playing message stream...')" class="btn btn-black" style="width: 100%;">WATCH MESSAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= CONNECT PAGE ================= -->
+        <div id="connect-page" class="page-view">
+            <div class="page-header">
+                <img src="./image03.jpg" alt="Connect" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">GET CONNECTED</h1>
+                    <p class="page-subtitle">Find community, serve others, and grow in your walk with God.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                        <div style="background: var(--bg-light-gray); padding: 30px; border-radius: 8px;">
+                            <h3>SMALL GROUPS</h3>
+                            <p style="margin: 15px 0; color: #555;">Meet weekly in homes around Pretoria to build deep relationships and study scripture together.</p>
+                            <a href="#contact" class="btn btn-black page-nav-link" data-target="contact-page">JOIN A GROUP</a>
+                        </div>
+                        <div style="background: var(--bg-light-gray); padding: 30px; border-radius: 8px;">
+                            <h3>SERVE TEAMS</h3>
+                            <p style="margin: 15px 0; color: #555;">Use your talents in worship, media, hospitality, or kids ministry to build the church family.</p>
+                            <a href="#contact" class="btn btn-black page-nav-link" data-target="contact-page">JOIN A TEAM</a>
+                        </div>
+                        <div style="background: var(--bg-light-gray); padding: 30px; border-radius: 8px;">
+                            <h3>NEXT STEPS</h3>
+                            <p style="margin: 15px 0; color: #555;">Discover the story, vision, and core values of Meta Church in a relaxed 45-minute gathering.</p>
+                            <a href="#contact" class="btn btn-black page-nav-link" data-target="contact-page">SIGN UP</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= GIVE PAGE ================= -->
+        <div id="give-page" class="page-view">
+            <div class="page-header">
+                <img src="./image05.jpg" alt="Give" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">GIVE ONLINE</h1>
+                    <p class="page-subtitle">Thank you for supporting the mission and ministry of Meta Church.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container" style="max-width: 600px; text-align: center;">
+                    <h2 class="section-title">BANKING DETAILS</h2>
+                    <p style="color: #555; margin-bottom: 30px;">You can give securely via Electronic Funds Transfer (EFT) using our official South African banking details:</p>
+                    
+                    <div style="background: var(--bg-light-gray); padding: 30px; border-radius: 8px; text-align: left; line-height: 2;">
+                        <p><strong>Bank Name:</strong> First National Bank (FNB)</p>
+                        <p><strong>Account Name:</strong> Meta Church Pretoria</p>
+                        <p><strong>Account Number:</strong> 62819203948</p>
+                        <p><strong>Branch Code:</strong> 250655</p>
+                        <p><strong>Reference:</strong> Tithe / Offering / Name</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <div id="contact-page" class="page-view">
+            <div class="page-header">
+                <img src="./image02.jpg" alt="Contact Us" class="page-header-bg">
+                <div class="container page-header-content">
+                    <h1 class="page-title">CONTACT US</h1>
+                    <p class="page-subtitle">We would love to hear from you!</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="container">
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will be in touch shortly.');">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+27 00 000 0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required placeholder="How can we help or pray for you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-yellow" style="width: 100%;">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="widget-icon">⏰</div>
+                    <div class="widget-title">SUNDAYS</div>
+                    <div class="widget-text">10:00 AM Service</div>
+                </div>
+                <div class="footer-widget">
+                    <div class="widget-icon">📞</div>
+                    <div class="widget-title">PHONE</div>
+                    <div class="widget-text">+27 (0)12 345 6789</div>
+                </div>
+                <div class="footer-widget">
+                    <div class="widget-icon">📍</div>
+                    <div class="widget-title">FIND US</div>
+                    <div class="widget-text">84 Bourke Street, Sunnyside, Pretoria</div>
+                </div>
+                <div class="footer-widget">
+                    <div class="widget-icon">✉️</div>
+                    <div class="widget-title">CONNECT</div>
+                    <div class="widget-text">info@metachurch.org.za</div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">f</a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">📷</a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">▶</a>
+                </div>
+                <div class="copyright-text">
+                    &copy; Meta Church Pretoria. All Rights Reserved.
+                </div>
+                <div class="developer-credit">
+                    Developed By <a href="https://palexdigital.pages.dev/" target="_blank" rel="noopener noreferrer">paléXdigital</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript for Interactive Routing, Tabs & Mobile Nav -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Navigation Toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const desktopNav = document.getElementById('desktopNav');
+
+            if (mobileToggle && desktopNav) {
+                mobileToggle.addEventListener('click', function () {
+                    desktopNav.classList.toggle('active');
+                });
+            }
+
+            // Dropdown Toggle on Mobile
+            const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Single Page Navigation / Dynamic Page Switching
+            const navLinks = document.querySelectorAll('.page-nav-link');
+            const pageViews = document.querySelectorAll('.page-view');
+
+            function navigateToPage(targetId) {
+                pageViews.forEach(page => {
+                    page.classList.remove('active');
+                });
+
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Update active navbar links
+                document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-target') === targetId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Close mobile nav menu
+                if (desktopNav) {
+                    desktopNav.classList.remove('active');
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const target = this.getAttribute('data-target');
+                    if (target) {
+                        e.preventDefault();
+                        navigateToPage(target);
+                    }
+                });
+            });
+
+            // Handle URL Hash changes
+            window.addEventListener('hashchange', function () {
+                const hash = window.location.hash.replace('#', '');
+                if (hash) {
+                    const pageMap = {
+                        'home': 'home-page',
+                        'about': 'about-page',
+                        'beliefs': 'beliefs-page',
+                        'leadership': 'leadership-page',
+                        'visit': 'visit-page',
+                        'messages': 'messages-page',
+                        'connect': 'connect-page',
+                        'give': 'give-page',
+                        'contact': 'contact-page'
+                    };
+                    if (pageMap[hash]) {
+                        navigateToPage(pageMap[hash]);
+                    }
+                }
+            });
+        });
+
+        // Tab Switcher Function for "Looking For More?"
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+
+            const currentTab = document.getElementById(tabName);
+            if (currentTab) {
+                currentTab.classList.add('active');
+            }
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
