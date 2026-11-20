@@ -1186,7 +1186,7 @@
             <!-- Events Section (Formerly Watch Latest Message) -->
             <section class="sermons-section">
                 <div class="container">
-                    <h2 class="section-title">Events</h2>
+                    <h2 class="section-title">Services</h2>
                     <p style="max-width: 600px; margin: 0 auto 30px auto; color: #000000;">
                         Stay connected and involved with our upcoming gatherings, conferences, and community activities.
                     </p>
@@ -1533,6 +1533,14 @@
                                 <div class="event-date-bar">Good Friday-Jesus Movie<br>Date: 3 April 2026</div>
                             </div>
 
+                            <!-- Event 6 -->
+                            <div class="event-card" data-date="2026-11-21">
+                                <div class="event-image-wrap">
+                                    <img src="./event06.jpg" alt="Youth End-Year Function">
+                                </div>
+                                <div class="event-date-bar">Youth End-Year Function<br>Date: 21 November 2026</div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1741,15 +1749,28 @@
             window.addEventListener('hashchange', handleHashChange);
             handleHashChange();
 
-            // Event Badges Date Evaluator
-            const eventCards = document.querySelectorAll('.event-card');
+            // Event Badges Date Evaluator & Reverse Chronological Sorting
+            const eventsTrack = document.getElementById('eventsTrack');
+            const eventCards = Array.from(document.querySelectorAll('.event-card'));
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
-            eventCards.forEach(card => {
+            function parseEventDate(dateStr) {
+                if (!dateStr) return null;
+                const parts = dateStr.split('-');
+                if (parts.length === 3) {
+                    return new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+                }
+                const parsed = new Date(dateStr);
+                return isNaN(parsed.getTime()) ? null : parsed;
+            }
+
+            eventCards.forEach((card, originalIndex) => {
+                card.dataset.originalIndex = originalIndex;
                 const dateStr = card.getAttribute('data-date');
-                if (dateStr) {
-                    const eventDate = new Date(dateStr);
+                const eventDate = parseEventDate(dateStr);
+
+                if (eventDate) {
                     const imageWrap = card.querySelector('.event-image-wrap');
 
                     if (eventDate < today) {
@@ -1768,8 +1789,25 @@
                 }
             });
 
+            if (eventsTrack && eventCards.length > 0) {
+                const sortedCards = [...eventCards].sort((a, b) => {
+                    const dateA = parseEventDate(a.getAttribute('data-date'));
+                    const dateB = parseEventDate(b.getAttribute('data-date'));
+                    const timeA = dateA ? dateA.getTime() : -Infinity;
+                    const timeB = dateB ? dateB.getTime() : -Infinity;
+
+                    if (timeA !== timeB) {
+                        return timeB - timeA;
+                    }
+                    return Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+                });
+
+                sortedCards.forEach(card => {
+                    eventsTrack.appendChild(card);
+                });
+            }
+
             // Events Slider Controls
-            const eventsTrack = document.getElementById('eventsTrack');
             const prevBtn = document.getElementById('carouselPrev');
             const nextBtn = document.getElementById('carouselNext');
             let currentSlideIndex = 0;
